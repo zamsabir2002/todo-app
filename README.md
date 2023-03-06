@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#About the App
+# About the App
 
 This app is a simple todo lister that takes an input from the user and displays a list of their todo tasks.
 The user can edit, delete and mark the task as complete or incomplete.
