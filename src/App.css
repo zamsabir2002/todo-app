@@ -1,10 +1,49 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modalBody {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(200, 200, 200, 0.26);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.modalContainer {
+  width: 500px;
+  z-index: 2000;
+  max-height: 350px;
+  margin-top: 12vh;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modalContainer .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 50%;
+  /* 
+   */
+  font-size: 1.7rem;
+  text-align: start;
+  margin-bottom: 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,6 +71,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

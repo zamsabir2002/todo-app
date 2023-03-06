@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import Todo from './components/todo';
+import Modal from './components/modal';
 import './App.css';
+import { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      {showModal && <Modal
+        type="add"
+        showModal={showModal}
+        setShowModal={(p) => setShowModal(p)}
+      />}
+      <div className='container'>
+        <h1 className='text-center fw-bold mt-4'>
+          TODO LIST
+        </h1>
+        <Todo
+          showModal={showModal}
+          setShowModal={(p) => { setShowModal(p) }} />
+      </div>
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            fontSize: '1.4rem'
+          }
+        }}
+      />
+    </>
   );
 }
 
